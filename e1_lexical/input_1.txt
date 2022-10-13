@@ -1,0 +1,6 @@
+void main()
+{
+	// hello world
+	int a = 10, b;
+	a = a * b / 5; // Simple Operation comment
+}
