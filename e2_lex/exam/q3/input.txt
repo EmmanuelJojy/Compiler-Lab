@@ -1,0 +1,10 @@
+/* 
+This is a sample comment
+*/
+
+// Comment
+#include <stdio.h>
+void main() {
+	// Comment in
+	int a = 36;
+}

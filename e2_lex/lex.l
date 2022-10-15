@@ -29,14 +29,3 @@ void main() {
 	printf("\n%d Comments Ignored\n", comment);
 	fclose(yyin);
 }
-
-/*
-/*
-	This is a sample program
-*/
-
-void main(){
-	// hello world
-	int a = 7, b = 7.35, c = 7.35E2 * 7E10;
-	a = a * b;
-}

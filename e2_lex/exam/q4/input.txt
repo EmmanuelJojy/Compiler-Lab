@@ -1,0 +1,6 @@
+
+#include                        <stdio.h>
+void main() {
+	// Comment in
+	int              a = 36;
+}
