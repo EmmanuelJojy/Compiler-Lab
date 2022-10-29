@@ -1,7 +1,7 @@
 # Compiler-Lab
 > KTU S7 Compiler Laboratory Source Codes CSL 411
 
-### Consolidated Index
+### Record Index
 | No. | Date       | Source | Title                           | Link                                                                               |
 | --- | ---------- | ------ | ------------------------------- | ---------------------------------------------------------------------------------- |
 | 01  | 28/09/2022 | C      | Lexical analyser for C Language | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/e1_lexical/p1_v1.c)    |
@@ -25,17 +25,17 @@
 
 ### Exam Experiments
 
-| No. | Date       | Source | Title            | Link   |
-| --- | ---------- | ------ | -----------------| ------ |
-| 01  | 19/10/2022 | LEX    | Calculator       | [🔗]() |
-| 02  | 19/10/2022 | LEX    | Line Space Tabs  | [🔗]() |
-| 03  | 19/10/2022 | LEX    | C Comments       | [🔗]() |
-| 04  | 19/10/2022 | LEX    | Multi - Space    | [🔗]() |
-| 05  | 19/10/2022 | LEX    | Positive Negative| [🔗]() |
-| 06  | 19/10/2022 | LEX    | Longest Length   | [🔗]() |
-| 07  | 19/10/2022 | LEX    | Odd Even         | [🔗]() |
-| 08  | 19/10/2022 | LEX    | Prime            | [🔗]() |
-| 09  | 19/10/2022 | LEX    | Leap Year        | [🔗]() |
-| 10  | 19/10/2022 | LEX    | Armstrong        | [🔗]() |
+| No. | Date       | Source | Title            | Link                                                                               |
+| --- | ---------- | ------ | -----------------| ---------------------------------------------------------------------------------- |
+| 01  | 19/10/2022 | LEX    | Calculator       | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q01/lex.l) |
+| 02  | 19/10/2022 | LEX    | Line Space Tabs  | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q02/lex.l) |
+| 03  | 19/10/2022 | LEX    | C Comments       | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q03/lex.l) |
+| 04  | 19/10/2022 | LEX    | Multi - Space    | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q04/lex.l) |
+| 05  | 19/10/2022 | LEX    | Positive Negative| [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q05/lex.l) |
+| 06  | 19/10/2022 | LEX    | Longest Length   | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q06/lex.l) |
+| 07  | 19/10/2022 | LEX    | Odd Even         | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q07/lex.l) |
+| 08  | 19/10/2022 | LEX    | Prime            | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q08/lex.l) |
+| 09  | 19/10/2022 | LEX    | Leap Year        | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q09/lex.l) |
+| 10  | 19/10/2022 | LEX    | Armstrong        | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q10/lex.l) |
 
 
