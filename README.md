@@ -1,5 +1,14 @@
 # Compiler-Lab
-> KTU S7 Compiler Laboratory Source Codes CSL 411
+KTU S7 Compiler Laboratory Source Codes CSL 411
+
+```console
+# To simulate LEX  programs use 
+$ flex lex.l && gcc -g -o lex lex.yy.c -ll && ./lex
+
+# To simulate YACC programs use 
+$ yacc -d yacc.y && flex lex.l && gcc -g -o parse y.tab.c lex.yy.c -ll && ./parse
+```
+
 
 ### Record Index
 | No. | Date       | Source | Title                           | Link                                                                               |
