@@ -4,27 +4,40 @@
 	#include <string.h>
 	int yylex();
 	void yyerror();
+	int palin(char *);
 %}
 
-%token other sym
+%union {
+	char *str;
+};
+
+
+%token word
+%type <str> start word
 
 %%
-start	: T '\n' 		{ printf("Valid Palindrome\n"); return 0; }
-		;	
-T		: sym T sym		{ printf("%c-%c", $1, $3); return 0; }
-		| sym
-		|
+start	: word '\n' 	{ 
+							if(palin($1)) printf("Valid Palindrome\n");
+							else printf("Not a Palindrome\n");
+							return 0; 
+						}
 		;
 %%
+
+int palin(char *s) {
+	int i = 0, j = strlen(s) - 1;
+	while(i < j) {
+		if(s[i] != s[j]) return 0;
+		i++; j--;
+	}
+	return 1;
+}
 
 void yyerror() {
 	printf("Invalid Palindrome.\n");
 }
 
 void main() {
-	#ifdef YYDEBUG
-  		yydebug = 1;
-	#endif
 	printf("Enter palindrome to valid:\t");
 	yyparse();
 }

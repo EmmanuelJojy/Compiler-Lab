@@ -5,6 +5,6 @@
 %}
 
 %%
-. { yylval.str = strdup(yytext); return sym; }
+.* { yylval.str = strdup(yytext); return word; }
 \n { return '\n'; }
 %%

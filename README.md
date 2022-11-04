@@ -30,7 +30,7 @@ $ yacc -d yacc.y && flex lex.l && gcc -g -o parse y.tab.c lex.yy.c -ll && ./pars
 | 03  | 28/10/2022 | YACC   | Zero One         | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e3_yacc/addon/01)      |
 | 04  | 28/10/2022 | YACC   | AnBn             | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e3_yacc/addon/anbn)    |
 | 05  | 28/10/2022 | YACC   | Infix to Postfix | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e3_yacc/addon/inpost)  |
-| 06  | 28/10/2022 | YACC   | Palindrome       |                                                                                    |
+| 06  | 28/10/2022 | YACC   | Palindrome       | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e3_yacc/addon/palin)   |
 
 ### Exam Experiments
 
