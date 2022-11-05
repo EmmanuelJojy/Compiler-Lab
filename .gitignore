@@ -1,0 +1,10 @@
+# All gcc compiled binaries
+# Convention: Use default binary name
+a.out
+
+# FLEX / LEX
+*.yy.c
+
+# YAAC / BISON
+*.tab.c
+*.tab.h
