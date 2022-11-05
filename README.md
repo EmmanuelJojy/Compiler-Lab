@@ -3,10 +3,10 @@ KTU S7 Compiler Laboratory Source Codes CSL 411
 
 ```console
 # To simulate LEX  programs use 
-$ flex lex.l && gcc -g -o lex lex.yy.c -ll && ./lex
+$ flex lex.l && gcc lex.yy.c -ll && ./a.out
 
 # To simulate YACC programs use 
-$ yacc -d yacc.y && flex lex.l && gcc -g -o parse y.tab.c lex.yy.c -ll && ./parse
+$ yacc -d yacc.y && flex lex.l && gcc y.tab.c lex.yy.c -ll && ./a.out
 ```
 
 
@@ -46,5 +46,3 @@ $ yacc -d yacc.y && flex lex.l && gcc -g -o parse y.tab.c lex.yy.c -ll && ./pars
 | 08  | 19/10/2022 | LEX    | Prime            | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q08/lex.l) |
 | 09  | 19/10/2022 | LEX    | Leap Year        | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q09/lex.l) |
 | 10  | 19/10/2022 | LEX    | Armstrong        | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q10/lex.l) |
-
-
