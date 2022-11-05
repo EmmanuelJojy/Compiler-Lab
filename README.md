@@ -46,3 +46,10 @@ $ yacc -d yacc.y && flex lex.l && gcc y.tab.c lex.yy.c -ll && ./a.out
 | 08  | 19/10/2022 | LEX    | Prime            | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q08/lex.l) |
 | 09  | 19/10/2022 | LEX    | Leap Year        | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q09/lex.l) |
 | 10  | 19/10/2022 | LEX    | Armstrong        | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e2_lex/exam/q10/lex.l) |
+
+### References
+| No. | Title     | Link                                                                             |
+| --- | --------- | -------------------------------------------------------------------------------- |
+| 01  | LEX       | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/references/lex.pdf)  |
+| 02  | YACC      | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/references/yacc.pdf) |
+| 03  | GNU BISON | [🔗](https://www.gnu.org/software/bison/manual/bison.html)                       |
