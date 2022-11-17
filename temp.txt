@@ -1,0 +1,9 @@
+Enter arithmetic expression: 2+3*5
+Result: 17
+
+Enter arithmetic expression: (2+3)*5+(6*7+(2*3))
+Result: 73
+
+Enter arithmetic expression: 2+3/
+Error. Failed to parse.
+

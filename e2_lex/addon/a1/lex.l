@@ -3,11 +3,11 @@
 	// Experiment 2 x1
 	// Lines, words, characters
 	#include <stdio.h>
-	int lines = 1, char_count = 0, words = 0;
+	int lines = 0, char_count = 0, words = 0;
 %}
 
 %%
-\n { lines++; }
+\n { lines++; char_count++;}
 [a-zA-Z_]* {words++; char_count += yyleng; }
 . { char_count++; }
 %%

@@ -2,5 +2,3 @@ hello World
 
 aeiou
 abcf    gejk
-
-
