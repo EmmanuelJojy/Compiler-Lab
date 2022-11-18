@@ -11,16 +11,16 @@ $ yacc -d yacc.y && flex lex.l && gcc y.tab.c lex.yy.c -ll && ./a.out
 
 
 ### Record Index
-| No. | Date       | Source | Title                           | Link                                                                               |
-| --- | ---------- | ------ | ------------------------------- | ---------------------------------------------------------------------------------- |
-| 01  | 28/09/2022 | C      | Lexical analyser for C Language | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/e1_lexical/p1_v1.c)    |
-| 02  | 06/10/2022 | LEX    | Lexical analyser for C Language | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/e2_lex/lex.l)          |
-| 03  | 21/10/2022 | LEX    | Count lines, words & characters | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/e2_lex/addon/a1/lex.l) |
-| 04  | 21/10/2022 | LEX    | Replace substring               | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/e2_lex/addon/a4/lex.l) |
-| 05  | 21/10/2022 | LEX    | Count vowels and consonants     | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/e2_lex/addon/a2/lex.l) |
-| 06  | 26/10/2022 | YACC   | Arithmetic expression validator | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e3_yacc/evaluvator)    |
-| 07  | 28/10/2022 | YACC   | Basic identifier validator      | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e3_yacc/identifier)    |
-| 08  | 28/10/2022 | YACC   | Arithmetic expression evaluator | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e3_yacc/arithmetic)    |
+| No. | Date       | Source | Title                           | Link                                                                              |
+| --- | ---------- | ------ | ------------------------------- | ----------------------------------------------------------------------------------|
+| 01  | 28/09/2022 | C      | Lexical analyser for C Language | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/e1_lexical/p1_v1.c)   |
+| 02  | 06/10/2022 | LEX    | Lexical analyser for C Language | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/e2_lex/lex.l)         |
+| 03  | 21/10/2022 | LEX    | Count lines, words & characters | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/e2_lex/addon/a1/lex.l)|
+| 04  | 21/10/2022 | LEX    | Replace substring               | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/e2_lex/addon/a4/lex.l)|
+| 05  | 21/10/2022 | LEX    | Count vowels and consonants     | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/e2_lex/addon/a2/lex.l)|
+| 06  | 26/10/2022 | YACC   | Arithmetic expression validator | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e3_yacc/arithmetic)   |
+| 07  | 28/10/2022 | YACC   | Basic identifier validator      | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e3_yacc/identifier)   |
+| 08  | 28/10/2022 | YACC   | Arithmetic expression evaluator | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e3_yacc/evaluvator)   |
 
 ### Addon Experiments
 | No. | Date       | Source | Title            | Link                                                                               |
