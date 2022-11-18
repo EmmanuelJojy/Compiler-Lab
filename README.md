@@ -21,6 +21,8 @@ $ yacc -d yacc.y && flex lex.l && gcc y.tab.c lex.yy.c -ll && ./a.out
 | 06  | 26/10/2022 | YACC   | Arithmetic expression validator | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e3_yacc/arithmetic)   |
 | 07  | 28/10/2022 | YACC   | Basic identifier validator      | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e3_yacc/identifier)   |
 | 08  | 28/10/2022 | YACC   | Arithmetic expression evaluator | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e3_yacc/evaluvator)   |
+| 09  | 18/11/2022 | C      | ∈ - Closure of all states       | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e4_eps/eps.c)         |
+| 10  | 18/11/2022 | C      | ∈ - NFA to NFA                  | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e5_enfa/enfa.c)       |
 
 ### Addon Experiments
 | No. | Date       | Source | Title            | Link                                                                               |

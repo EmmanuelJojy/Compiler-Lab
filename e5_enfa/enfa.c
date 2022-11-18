@@ -1,90 +1,92 @@
 #include <stdio.h>
-#include <stdlib.h>
-#define st 10 // Maximum allowable state
-#define ch 10 // Maximum 10 unique charcters
+#define st 10 // MAX STATES
+#define ch 10 // MAX INPUTS
 
-struct state {
-	int arr[st][ch];
-	int inv[ch][st];
-	int ecl[st];
-	int nfa[ch][st];
-};
+// DS
+int tra[st][st][ch], inv[st][ch][st], nfa[st][ch][st];
+int ecl[st][st];
 
-struct state states[st];
+char  inp[st];
+int vis[st], see[st], inpcnt = 0;
 
-int visited[st], seen[st];
-
-char chMap[ch]; int chcnt = 0;
-
-void eps(int org, int node) {
-	if(visited[node]) return;
-	visited[node] = 1; states[org].ecl[node] = 1;
-	for(int i = 0; i < st; i++) if(states[org].arr[i][0] == 1)  eps(org, i);
+int mapInp(char in) {
+	for(int i = 0; i <= inpcnt; i++) if(inp[i] == in) return i;
+	inp[inpcnt++] = in; return inpcnt - 1;
 }
 
-int mapChar(char input)
-{
-	for(int i = 0; i < chcnt; i++)
-		if(chMap[i] == input) 
-			return i;
-	chMap[chcnt++] = input;
-	return chcnt - 1;
+void eps(int org, int s) {
+	if(vis[s]) return;
+	vis[s] = 1;
+	ecl[org][s] = 1;
+	for(int i = 0; i < st; i++) if(tra[s][i][0]) eps(org, i);
 }
 
-void main() {	
-	chMap[chcnt++] = 'e';
+void main() {
+	inp[inpcnt++] = 'e';
 	
-	FILE *fp;
-	fp = fopen("td.txt", "r");
-	int start, final, index; char input;
-	while(fscanf(fp, "%d %c %d", &start, &input, &final) != EOF) {
-		seen[start] = 1; seen[final] = 1;
-		index = mapChar(input);
-		states[start].arr[final][index] = 1;
-		states[start].inv[index][final] = 1;
+	FILE *fp = fopen("td.txt", "r");
+	int s1, s2; char in;
+	while(fscanf(fp, "%d %c %d", &s1, &in, &s2) != EOF) {
+		see[s1] = 1;
+		see[s2] = 1;
+		int index = mapInp(in);
+		tra[s1][s2][index] = 1;
+		inv[s1][index][s2] = 1;
 	}
 	fclose(fp);
 	
-	int i, j, k, l, m, n;
-	for(i = 0; i < st; i++) {
-		for(j = 0; j < st; j++) visited[j] = 0;
+	for(int i = 0; i < st; i++) {
+		for(int j = 0; j < st; j++) vis[j] = 0;
 		eps(i, i);
 	}
 	
-	// E NFA to NFA
-	for(i = 0; i < st; i++) {
-		for(j = 1; j < chcnt; j++) {
-			for(k = 0; k < st; k++) {
-				if(states[i].ecl[k] && seen[i] && seen[k]) {
-					// i e k - Confirmed
-					printf(">Confirming %d e %d\n", i, k);
-					for(l = 0; l < st; l++) {
-						if(states[k].inv[j][l]) {
-							// k 'j' l - confirmed
-							printf("\t>Confirming %d %c %d\n", i, chMap[j], k);
-							for(m = 0; m < st; m++) {
-								// my result is eclose(l)
-								if(states[l].ecl[m]) {
-									// l e m - confirmed
-									printf("\t\t>Confirming %d e %d\n", l, m);
-									states[i].nfa[j][m] = 1;
+	/* ECL Check
+	for(int i = 0; i < st; i++) {
+		if(!see[i]) continue;
+		printf("E(%d) = ", i);
+		for(int j = 0; j < st; j++) if(ecl[i][j]) printf("%d ", j);
+		printf("\n");
+	}
+	*/
+	
+	for(int i = 0; i < st; i++) {
+		if(!see[i]) continue;
+		for(int j = 1; j < inpcnt; j++) {
+			printf("\n-> START   %d x %c\n", i, inp[j]);
+			for(int k = 0; k < st; k++) {
+				if(!see[k]) continue;
+				if(ecl[i][k]) {
+					printf("-> CONFIRM %d-e-%d\n", i, k);
+					for(int l = 0; l < st; l++) {
+						if(inv[k][j][l]) {
+							printf("\t-> CONFIRM %d-%c-%d\n", k, inp[j], l);
+							for(int m = 0; m < st; m++) {
+								if(ecl[l][m]) {
+									printf("\t\t-> CONFIRM %d-e-%d\n", l, m);
+									nfa[i][j][m] = 1;
 								}
+								// else printf("\t\t-> FAILURE %d-e-%d\n", l, m);
 							}
 						}
+						// else printf("\t-> FAILURE %d-%c-%d\n", k, inp[j], l);
 					}
 				}
+				// else printf("-> FAILURE %d-e-%d\n", i, k);
 			}
 		}
 	}
 	
-	// printing results
-	for(i = 0; i < st; i++) {
-		for(j = 1; j < chcnt; j++) {
-			for(k = 0; k < st; k++) {
-				if(states[i].nfa[j][k]) {
-					printf("%d %c %d\n", i, chMap[j], k);
+	printf("\nNFA Transitions\n");
+	for(int i = 0; i < st; i++) {
+		for(int j = 1; j < inpcnt; j++) {
+			for(int k = 0; k < st; k++) {
+				if(nfa[i][j][k] && see[i] && see[k]) {
+					printf("%d - %c - %d\n", i, inp[j], k);
 				}
 			}
 		}
-	}
+	}			 
 }
+	
+	
+
