@@ -2,4 +2,4 @@ E=TR
 R=+TR|#
 T=FY
 Y=*FY|#
-F=(E)|#
+F=(E)|i
