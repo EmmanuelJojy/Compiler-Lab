@@ -1,6 +1,5 @@
-S=aBDh
-B=cC
-C=bC|#
-D=EF
-E=g|#
-F=f|#
+E=TR
+R=+TR|#
+T=FY
+Y=*FY|#
+F=(E)|i

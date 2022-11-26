@@ -87,6 +87,29 @@ int first(char T) {
 	}
 	return flag;
 }
+
+void follow(char T) {
+	int i, j, k;
+	for(i = 0; i <= trcnt; i++) {
+		for(j = 2; j < max_tl && trans[i][j] != '\0'; j++) {
+			if(trans[i][j] == T) {
+				for(k = j + 1; k < max_tl && trans[i][k] != '\0'; k++) {
+					if(isNonTerminal(trans[i][k])) {
+						if(!first(trans[i][k])) 
+							break;
+					}
+					else {
+						if(trans[i][k] != '#') { 
+							res[mapSymbol(trans[i][k])] = 1;
+							break;
+						}
+					}
+				}
+				if(trans[i][k] == '\0' && trans[i][0] != T) follow(trans[i][0]);
+			}
+		}
+	}
+}
 		
 void main() {
 	FILE *fp = fopen("gram.txt", "r");
@@ -100,4 +123,15 @@ void main() {
 		for(j = 0; j < tecnt; j++) if(res[j]) printf("%c, ", term[j]);
 		printf("}\n");
 	}
+
+	sprintf(trans[trcnt], "%c=%c$", trans[0][0], trans[0][0]);
+	printf("\n");
+	for(i = 0; i < ntcnt; i++) {
+		for(j = 0; j < tecnt; j++) res[j] = 0;
+		follow(nonterm[i]);
+		printf("Follow(%c)  = { ", nonterm[i]);
+		for(j = 0; j < tecnt; j++) if(res[j] && term[j] != '#') printf("%c, ", term[j]);
+		printf("}\n");
+	}
+
 }
