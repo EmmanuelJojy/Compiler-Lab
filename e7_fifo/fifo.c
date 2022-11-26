@@ -8,18 +8,13 @@
 char trans[max_tc][max_tl];
 int trcnt = -1;
 
-int first[max_nt][max_te];
-int follow[max_nt][max_te];
+char nonterm[max_nt], term[max_te];
+int ntcnt = 0, tecnt;
 
-char nonterm[max_nt];
-int ntcnt = 0;
+int res[max_te];
 
-char term[max_te];
-int tecnt;
 
-int isNonTerminal(char ch) {
-	return (ch >= 'A' && ch <='Z') ? 1 : 0;
-}
+int isNonTerminal(char ch) { return (ch >= 'A' && ch <='Z') ? 1 : 0; }
 
 int mapSymbol(char ch) {
 	if(isNonTerminal(ch)) {
@@ -29,13 +24,11 @@ int mapSymbol(char ch) {
 		nonterm[ntcnt++] = ch;
 		return ntcnt - 1;
 	}
-	else {
-		for(int i = 0; i < tecnt; i++) 
-			if(term[i] == ch)
-				return i;
-		term[tecnt++] = ch;
-		return tecnt - 1;
-	}
+	for(int i = 0; i < tecnt; i++) 
+		if(term[i] == ch)
+			return i;
+	term[tecnt++] = ch;
+	return tecnt - 1;
 }
 
 void analyze(FILE *fp) {
@@ -68,106 +61,43 @@ void analyze(FILE *fp) {
 	
 	printf("\nTerminals Encountered: (%d)\n  ", ntcnt);
 	for(i = 0; i < tecnt; i++) printf("%c ", term[i]);
-	printf("\n\n");
+
+	fclose(fp);	printf("\n\n");
 }
 
-void find_first(char T, char curr) {
-	int i;
+int first(char T) {
+	int i, j, flag = 0;
 	for(i = 0; i < trcnt; i++) {
-		if(trans[i][0] == curr) {
-			if(isNonTerminal(trans[i][2]))
-				find_first(T, trans[i][2]);
-			else
-				first[mapSymbol(T)][mapSymbol(trans[i][2])] = 1;
-		}
-	}				
-}
-
-void copy_follow(char T, char fo) {
-	for(int i = 0; i < tecnt; i++) {
-		if(follow[mapSymbol(fo)][i] == 1) {
-			follow[mapSymbol(T)][i] = 1;
-		}
-	}
-}
-
-int copy_first(char T, char fi) {
-	int flag = 0;
-	for(int i = 0; i < tecnt; i++) {
-		if(first[mapSymbol(fi)][i] == 1) {
-			follow[mapSymbol(T)][i] = 1;
-			if(term[i] == '#') 
-				flag = 1;
+		if(trans[i][0] == T) {
+			for(j = 2; j < max_tl && trans[i][j] != T && trans[i][j] != '\0'; j++) {
+				if(isNonTerminal(trans[i][j])) {
+					if(!first(trans[i][j])) {
+						flag = 0;
+						break;
+					}
+					flag = 1;
+				}  
+				else {
+					res[mapSymbol(trans[i][j])] = 1;
+					if(trans[i][j] == '#') flag = 1;
+					break;
+				}
+			}			
 		}
 	}
 	return flag;
 }
-	
-void find_follow_rep(char T, int i, int j) {
-	int flag = copy_first(T, trans[i][j]);
-	if(flag && trans[i][j + 1] != '\0') {
-		find_follow_rep(T, i, j + 1);
-	}
-	else {
-		copy_follow(T, trans[i][j]);
-	}
-}
-
-void find_follow(char T, char curr) {
-	int i, j;
-	for(i = 0; i < trcnt; i++) {
-		for(j = 2; j < max_tl && trans[i][j] != '\0'; j++) {
-			char next = trans[i][j + 1];
-			if(trans[i][j] == curr) {
-				if(isNonTerminal(next) && next != trans[i][0]) {
-					find_follow_rep(T, i, j + 1);
-				}
-				else if(next == '\0') {
-					copy_follow(T, trans[i][0]);
-				}
-				else if(!isNonTerminal(next))
-				{
-					follow[mapSymbol(T)][mapSymbol(next)] = 1;
-				}
-			}
-		}
-	}
-}			
-
+		
 void main() {
 	FILE *fp = fopen("gram.txt", "r");
 	analyze(fp);
-	fclose(fp);
 	
 	int i, j;
-	for(i = 0; i < ntcnt; i++){
-		char T = nonterm[i];
-		find_first(T, T);
-		printf("First(%c)  = { ", T);
-		int index = mapSymbol(T);
-		for(j = 0; j < tecnt; j++)
-			if(first[index][j])
-				printf("%c, ", term[j]);
+	for(i = 0; i < ntcnt; i++) {
+		for(j = 0; j < tecnt; j++) res[j] = 0;
+		first(nonterm[i]);
+		printf("First(%c)  = { ", nonterm[i]);
+		for(j = 0; j < tecnt; j++) if(res[j]) printf("%c, ", term[j]);
 		printf("}\n");
-	}
-	
-	printf("\n");
-	follow[mapSymbol(trans[0][0])][mapSymbol('$')] = 1;
-	char prev = '!';
-	for(i = 0; i < trcnt; i++){
-		char T = trans[i][0];
-		if(T == prev) 
-			continue;
-		find_follow(T, T);
-		printf("Follow(%c) = { ", T);
-		int index = mapSymbol(T);
-		for(j = 0; j < tecnt; j++) {
-			if(term[j] == '#')
-				continue;
-			if(follow[index][j])
-				printf("%c, ", term[j]);
-		}
-		printf("}\n");
-		prev = T;
 	}
 }
