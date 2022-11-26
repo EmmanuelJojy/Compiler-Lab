@@ -125,7 +125,6 @@ void main() {
 	}
 
 	sprintf(trans[trcnt], "%c=%c$", trans[0][0], trans[0][0]);
-	printf("\n");
 	for(i = 0; i < ntcnt; i++) {
 		for(j = 0; j < tecnt; j++) res[j] = 0;
 		follow(nonterm[i]);
@@ -133,5 +132,4 @@ void main() {
 		for(j = 0; j < tecnt; j++) if(res[j] && term[j] != '#') printf("%c, ", term[j]);
 		printf("}\n");
 	}
-
 }
