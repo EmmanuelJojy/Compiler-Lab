@@ -9,7 +9,6 @@
 // T  -> FT'
 // T' -> *FT'|∈
 // F  -> (E)|id
-//
 
 #include <stdio.h>
 #include <ctype.h>
@@ -27,7 +26,6 @@ int main() {
         printf("Expression is Valid.\n");
     else
         printf("Expression is Invalid.\n");
-
     return 0;
 }
 

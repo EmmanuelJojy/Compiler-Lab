@@ -17,11 +17,9 @@ int reduce(char ch, int index, char *trans) {
 }
 
 int check() {
-    //if(scnt - 2 > 0) {
-        if(stk[scnt] == 'E' && stk[scnt - 1] == '+' && stk[scnt - 2] == 'E') return reduce('E', scnt - 2, "E -> E + E");
-        if(stk[scnt] == 'E' && stk[scnt - 1] == '*' && stk[scnt - 2] == 'E') return reduce('E', scnt - 2, "E -> E * E");
-        if(stk[scnt] == ')' && stk[scnt - 1] == 'E' && stk[scnt - 2] == '(') return reduce('E', scnt - 2, "E -> ( E )");
-    //}
+    if(stk[scnt] == 'E' && stk[scnt - 1] == '+' && stk[scnt - 2] == 'E') return reduce('E', scnt - 2, "E -> E + E");
+    if(stk[scnt] == 'E' && stk[scnt - 1] == '*' && stk[scnt - 2] == 'E') return reduce('E', scnt - 2, "E -> E * E");
+    if(stk[scnt] == ')' && stk[scnt - 1] == 'E' && stk[scnt - 2] == '(') return reduce('E', scnt - 2, "E -> ( E )");
     if(isalnum(stk[scnt]) && stk[scnt] != 'E') return reduce('E', scnt, "E -> id");
     return 0;
 }
@@ -45,6 +43,5 @@ int main() {
         printf("\nValid Expression.\n");
     else
         printf("\nInvalid Expression.\n");
-    
     return 0;
 }
