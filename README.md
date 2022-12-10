@@ -25,6 +25,8 @@ $ yacc -d yacc.y && flex lex.l && gcc y.tab.c lex.yy.c -ll && ./a.out
 | 10  | 18/11/2022 | C      | ∈ - NFA to NFA                  |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e5_enfa/enfa.c)        |
 | 11  |            | C      | NFA to DFA                      |  NA                                                                                 |
 | 12  | 25/11/22   | C      | First and Follow of Grammar     |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e7_fifo/fifo.c)        |
+| 13  | 09/12/2022 | C      | Recursive Descent Parser       |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e8_rdp/rdp.c)        |
+| 14  | 09/12/2022 | C      | Shift Reduce Parser            |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e9_srp/srp.c)        |
 
 ### Addon Experiments
 | No. | Date       | Source | Title            | Link                                                                             |
