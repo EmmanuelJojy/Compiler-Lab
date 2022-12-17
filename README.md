@@ -27,6 +27,7 @@ $ yacc -d yacc.y && flex lex.l && gcc y.tab.c lex.yy.c -ll && ./a.out
 | 12  | 25/11/22   | C      | First and Follow of Grammar     |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e07_fifo/fifo.c)        |
 | 13  | 09/12/2022 | C      | Recursive Descent Parser       |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e08_rdp/rdp.c)          |
 | 14  | 09/12/2022 | C      | Shift Reduce Parser            |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e09_srp/srp.c)          |
+| 15  | 17/12/2022 | C      | Intermediate Code Generation   |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e10_icg/icg.c)          |
 
 ### Addon Experiments
 | No. | Date       | Source | Title            | Link                                                                              |
