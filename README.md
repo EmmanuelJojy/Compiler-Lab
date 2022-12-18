@@ -23,11 +23,12 @@ $ yacc -d yacc.y && flex lex.l && gcc y.tab.c lex.yy.c -ll && ./a.out
 | 08  | 28/10/2022 | YACC   | Arithmetic expression evaluator |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e03_yacc/evaluvator)    |
 | 09  | 18/11/2022 | C      | ∈ - Closure of all states       |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e04_eps/eps.c)          |
 | 10  | 18/11/2022 | C      | ∈ - NFA to NFA                  |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e05_enfa/enfa.c)        |
-| 11  |            | C      | NFA to DFA                      |  NA                                                                                  |
+| 11  |            | C      | NFA to DFA                      |                                                                                    |
 | 12  | 25/11/22   | C      | First and Follow of Grammar     |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e07_fifo/fifo.c)        |
-| 13  | 09/12/2022 | C      | Recursive Descent Parser       |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e08_rdp/rdp.c)          |
-| 14  | 09/12/2022 | C      | Shift Reduce Parser            |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e09_srp/srp.c)          |
-| 15  | 17/12/2022 | C      | Intermediate Code Generation   |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e10_icg/icg.c)          |
+| 13  | 09/12/2022 | C      | Recursive Descent Parser        |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e08_rdp/rdp.c)          |
+| 14  | 09/12/2022 | C      | Shift Reduce Parser             |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e09_srp/srp.c)          |
+| 15  | 17/12/2022 | C      | Intermediate Code Generation    |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e10_icg/icg.c)          |
+| 16  | 17/12/2022 | C      | Constant Propagation            |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e11_cp/cp.c)          |
 
 ### Addon Experiments
 | No. | Date       | Source | Title            | Link                                                                              |
