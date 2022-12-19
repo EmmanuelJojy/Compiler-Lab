@@ -40,8 +40,9 @@ int E_() {
     if(s[cnt] == '+') {
         cnt++;
         if(T()) 
-            if(E_())                
+            if(E_())               
                 return 1;
+        return 0;
     }
     return 1;
 }
@@ -56,9 +57,10 @@ int T() {
 int T_() {
     if(s[cnt] == '*') {
         cnt++;
-        if(F()) 
+        if(F())
             if(T_())
                 return 1;
+        return 0;
     }
     return 1;
 }
@@ -66,7 +68,7 @@ int T_() {
 int F() {
     if(s[cnt] == '(') {
         cnt++;
-        if(E) {
+        if(E()) {
             if(s[cnt] == ')') {
                 cnt++;
                 return 1;
