@@ -29,6 +29,7 @@ $ yacc -d yacc.y && flex lex.l && gcc y.tab.c lex.yy.c -ll && ./a.out
 | 14  | 09/12/2022 | C      | Shift Reduce Parser             |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e09_srp/srp.c)          |
 | 15  | 17/12/2022 | C      | Intermediate Code Generation    |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e10_icg/icg.c)          |
 | 16  | 17/12/2022 | C      | Constant Propagation            |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e11_cp/cp.c)          |
+| 16  | 17/12/2022 | C      | Assembly Code Generation        |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e12_assembly/assembly.c)          |
 
 ### Addon Experiments
 | No. | Date       | Source | Title            | Link                                                                              |
