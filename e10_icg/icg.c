@@ -29,7 +29,7 @@ void inpos() {
         else if(ch == ')')
             while((temp = pop()) != '(') pex[pcnt++] = temp;
         else { 
-            if(ch != '(') while(rank(stk[top], 1) >= rank(ch, 0)) pex[pcnt++] = pop();
+            while(rank(stk[top], 1) >= rank(ch, 0)) pex[pcnt++] = pop();
             push(ch);
         }
     }
