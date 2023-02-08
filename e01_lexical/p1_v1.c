@@ -98,10 +98,3 @@ void main() {
 	}
 	fclose(fp);
 }
-			
-			
-					
-				
-					
-				
-	

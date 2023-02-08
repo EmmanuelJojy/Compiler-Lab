@@ -133,10 +133,3 @@ void main() {
 	for(i = 0; i < cnt_sym; i++) printf("'%s' ", tokens[4][i]);
 	printf("]\n\n");	
 }
-			
-			
-					
-				
-					
-				
-	

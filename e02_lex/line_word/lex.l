@@ -18,4 +18,3 @@ void main() {
 	printf("Statistics:\n%d\tLines\n%d\tCharacters\n%d\tWords\n", lines, char_count, words);
 	fclose(yyin);
 }
-
