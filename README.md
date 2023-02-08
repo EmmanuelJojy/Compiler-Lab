@@ -2,6 +2,11 @@
 KTU S7 Compiler Laboratory Source Codes CSL 411
 
 ```console
+# For LEX and YACC code create a new directory for each question.
+# Name the files lex.l and yaac.y for simplicity.
+# The commands given below are tailored for the default names.
+# Note: "&&" simply combines the commands to a single line.
+
 # To simulate LEX  programs use 
 $ flex lex.l && gcc lex.yy.c -ll && ./a.out
 
@@ -59,12 +64,12 @@ $ gcc pgm.c && ./a.out
 | 09  | 19/10/2022 | LEX    | Leap Year                 |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e02_lex/exam/q09/lex.l)  |
 | 10  | 19/10/2022 | LEX    | Armstrong                 |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e02_lex/exam/q10/lex.l)  |
 | 11  | 21/12/2022 | C      | Dead Code Elimination     |  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e11_opt/dead-code/de.c)  |
-| 12  | 21/12/2022 | C      | Sub-expression Elimination|  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e11_opt/subex-elim/se.c) |
-| 13  | 21/12/2022 | C      | Compiler Backend          |                                                                                       |
+| 12  | 21/12/2022 | C      | Sub-expression Elimination|  [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/e11_opt/subex-elim/se.c) |   
 
 ### References
-| No. | Title     | Link                                                                            |
-| --- | --------- | --------------------------------------------------------------------------------|
-| 01  | LEX       | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/references/lex.pdf) |
-| 02  | YACC      | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/references/yacc.pdf)|
-| 03  | GNU BISON | [🔗](https://www.gnu.org/software/bison/manual/bison.html)                      |
+| No. | Title               | Link                                                                            |
+| --- | ------------------- | --------------------------------------------------------------------------------|
+| 01  | LEX                 | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/references/lex.pdf) |
+| 02  | YACC                | [🔗](https://github.com/EmmanuelJojy/Compiler-Lab/blob/main/references/yacc.pdf)|
+| 03  | GNU BISON           | [🔗](https://www.gnu.org/software/bison/manual/bison.html)                      |
+| 04  | Record Left Print   | [📄](https://github.com/EmmanuelJojy/Compiler-Lab/tree/main/references/lab_print.docx)                      |
