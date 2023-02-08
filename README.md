@@ -1,12 +1,10 @@
 # Compiler-Lab
 KTU S7 Compiler Laboratory Source Codes CSL 411
 
-```console
-# For LEX and YACC code create a new directory for each question.
-# Name the files lex.l and yaac.y for simplicity.
-# The commands given below are tailored for the default names.
-# Note: "&&" simply combines the commands to a single line.
+- *For LEX and YACC code create a new directory for each question and name the source files `lex.l` and `yaac.y` for simplicity. The commands given below are tailored for the default names.*
+- *`&&` simply combines the commands to a single line.*
 
+```console
 # To simulate LEX  programs use 
 $ flex lex.l && gcc lex.yy.c -ll && ./a.out
 
