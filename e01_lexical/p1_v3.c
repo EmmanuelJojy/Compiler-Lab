@@ -28,10 +28,3 @@ void main() {
 	}
 	fclose(fp);
 }
-			
-			
-					
-				
-					
-				
-	
